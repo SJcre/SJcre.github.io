@@ -33,6 +33,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
       <tags>
         <tag>教程</tag>
       </tags>
