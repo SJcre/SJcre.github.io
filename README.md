@@ -59,15 +59,6 @@ npm run publish
 
 只想看效果不发布的话用 `npm run build`，然后直接打开 `docs/index.html` 或者 `hexo s` 更省事。
 
-## 本机环境注意事项
-
-- **npm 源**：`.npmrc` 已固定为 `registry.npmmirror.com`，官方源在当前网络下不通。
-- **证书**：本机 SteamTools（GitHub 加速）会做 TLS 中间人，git 已全局配置
-  `http.sslCAInfo` 指向合并过 SteamTools 根证书的 CA 包
-  （`C:\Users\48487\.workbuddy\certs\ca-bundle-plus.crt`，2027-08-29 到期）。
-  如果哪天 git 报证书错误，重新导出根证书并合并即可。
-- **Node**：v22.22.2；Hexo 7.3.0（Hexo 8 需新版 CLI，暂不兼容）。
-
 ## 待办
 
 - [x] 换回 Diaspora 主题，还原 2022 年的视觉样式
