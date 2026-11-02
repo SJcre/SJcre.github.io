@@ -59,6 +59,17 @@ npm run publish
 
 只想看效果不发布的话用 `npm run build`，然后直接打开 `docs/index.html` 或者 `hexo s` 更省事。
 
+## 主题说明
+
+主题是 [Fechin/hexo-theme-diaspora](https://github.com/Fechin/hexo-theme-diaspora)（MIT 许可）。
+
+**上游已归档**，2022-07-05 后不再维护。因此本仓库把主题作为普通文件纳入版本控制
+（不是 submodule），由自己接管维护，具体改动记在 `themes/diaspora/LOCAL-CHANGES.md`。
+
+改主题代码前先看那个文件，避免和已有改动冲突。`LICENSE` 文件必须保留。
+
+主题配置在根目录 `_config.diaspora.yml`，和主题代码分离，升级/替换主题时不会丢配置。
+
 ## 待办
 
 - [x] 换回 Diaspora 主题，还原 2022 年的视觉样式

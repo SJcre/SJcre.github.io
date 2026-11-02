@@ -507,12 +507,15 @@ $(function() {
                 break;
             // audio play
             case (tag.indexOf('icon-play') != -1):
+                // 本地改动：页面上没有播放器时直接忽略，避免报错
+                if (!$('#audio').length) return false;
                 $('#audio')[0].play()
                 $('.icon-play').removeClass('icon-play').addClass('icon-pause')
                 return false;
                 break;
             // audio pause
             case (tag.indexOf('icon-pause') != -1):
+                if (!$('#audio').length) return false;
                 $('#audio')[0].pause()
                 $('.icon-pause').removeClass('icon-pause').addClass('icon-play')
                 return false;

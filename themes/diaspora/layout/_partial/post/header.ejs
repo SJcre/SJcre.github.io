@@ -1,7 +1,12 @@
+<%
+// 本地改动：没有音源时不显示播放按钮
+var mp3List = theme.mp3 || [];
+var hasAudio = (page.mp3 && page.mp3.length > 0) || mp3List.length > 0;
+%>
 <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="<%= config.url %>"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <% if (hasAudio) { %><div title="播放/暂停" class="iconfont icon-play"></div><% } %>
     <h3 class="subtitle"><%- page.title %></h3>
     <div class="social">
         <div>

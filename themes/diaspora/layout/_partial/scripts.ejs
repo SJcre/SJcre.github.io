@@ -1,3 +1,4 @@
 <% if (theme.gitalk.enable){ %><%- js(['//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js'])%><%}%>
-<%- js(['//lib.baomitu.com/jquery/1.8.3/jquery.min.js', 'js/plugin.js', 'js/typed.js', 'js/diaspora.js'])%>
+<%# 本地改动：jQuery 改用主题自带文件，不再依赖 lib.baomitu.com 外部 CDN %>
+<%- js(['js/jquery.min.js', 'js/plugin.js', 'js/typed.js', 'js/diaspora.js'])%>
 <%- partial('photoswipe') %>

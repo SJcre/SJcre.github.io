@@ -7,21 +7,28 @@
         </div>
         <div class="content markdown">
             <%- page.content %>
+            <%
+            // 本地改动：没有可用音源时整块播放器都不渲染，避免出现点了没声音的死按钮
+            var mp3List = theme.mp3 || [];
+            var hasAudio = (page.mp3 && page.mp3.length > 0) || mp3List.length > 0;
+            %>
+            <% if (hasAudio) { %>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="<%- theme.autoplay || page.autoplay || "false" %>">
                 <source type="audio/mpeg" src="<%- page.mp3 %>">
             </audio>
-            <% if (page.mp3 == '' | page.mp3 == null){%>
+            <% if (!page.mp3) { %>
                 <ul id="audio-list" style="display:none">
-                    <% for (var i in theme.mp3){ %>
-                        <% if (theme.mp3[i].indexOf('http') == 0){%>
-                            <li title="<%- i %>" data-url="<%- theme.mp3[i] %>"></li>
+                    <% for (var i in mp3List){ %>
+                        <% if (mp3List[i].indexOf('http') == 0){%>
+                            <li title="<%- i %>" data-url="<%- mp3List[i] %>"></li>
                         <%} else {%>
-                            <li title="<%- i %>" data-url="<%- config.root + theme.mp3[i] %>"></li>
+                            <li title="<%- i %>" data-url="<%- config.root + mp3List[i] %>"></li>
                         <%}%>
                     <%}%>
                 </ul>
-            <%}%>
+            <% } %>
+            <% } %>
         </div>
         <% if (theme.copyright.enable){ %>
             <%- partial("_partial/copyright") %>
