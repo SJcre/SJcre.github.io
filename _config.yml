@@ -1,0 +1,77 @@
+# Hexo Configuration
+# 站点信息
+title: DByun的小站
+subtitle: ''
+description: ''
+keywords: 'Fechin,'
+author: DByun
+language: zh-CN
+timezone: 'Asia/Shanghai'
+
+# URL
+## 用户名站点仓库，根路径用 /
+url: https://sjcre.github.io
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+# 目录
+source_dir: source
+## 构建产物直接输出到 docs，GitHub Pages 发布源设为 main 分支的 /docs
+public_dir: docs
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# 写作
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+
+# 首页与分页
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+per_page: 10
+pagination_dir: page
+
+# 主题
+theme: diaspora
+
+# 本地搜索索引（Diaspora 的 local_search 读取 /search.xml）
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+  limit: 10000
+
+# 部署
+## 单分支模式：产物生成到 docs/，直接 git commit && git push 即可
+## GitHub Pages 发布源需设为：main 分支 /docs 目录
+## 如果以后想改回 hexo-deployer-git，取消下面注释并删掉上面的 public_dir: docs
+# deploy:
+#   type: git
+#   repo: git@github.com:SJcre/SJcre.github.io.git
+#   branch: main
